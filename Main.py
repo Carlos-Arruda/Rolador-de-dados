@@ -1,29 +1,37 @@
 from random import randint
 from time import sleep
+
 while True:
     try:
-        n1 = randint(1, 20)
-        r = str(input('Deseja rolar um dado?: ')).strip().upper()[0]
-        while r not in 'S':
-            r = str(input('Deseja rolar um dado?: ')).strip().upper()[0]
-        print()
-        if r in 'S':
-            if n1 == 20:
-                print(f'Eita,você tirou um {n1} natural,!!!')
+        d100 = randint(1,100)
+        d20 = randint(1,20)
+        d12 = randint(1,12)
+        d10 = randint(1,10)
+        d8 = randint(1,8)
+        d6 = randint(1,6)
+        d4 = randint(1,4)
 
-            elif n1 == 1:
-                print(f'Poxa vida,{n1} natural é complicado hein')
-
-            else:
-                print(f'O número rolado foi {n1}')
-        '''sleep(1.5)'''
-        print()
-        r2 = str(input('Deseja continuar? [s/n]: ')).strip().upper()[0]
-        while r2 not in 'N' or 'S':
-            r2 = str(input('Deseja continuar? [s/n]: ')).strip().upper()[0]
-            if r2 in 'N':
-                print('Espero que tenha se divertido,tenha um bom dia!!!')
-                break
-
+        dado = str(input('Qual dado deseja rolar?(d100,d20,d12,d10,d8,d6,d4 ou sair pra parar): ')).strip().upper()
+        sleep(0.3)
+        if dado == 'D100':
+            print(f'vc rolou {d100}')
+        elif dado == 'D20':
+            print(f'vc rolou {d20}')
+        elif dado == 'D12':
+            print(f'vc rolou {d12}')
+        elif dado == 'D10':
+            print(f'vc rolou {d10}')
+        elif dado == 'D8':
+            print(f'vc rolou {d8}')
+        elif dado == 'D6':
+            print(f'vc rolou {d6}')
+        elif dado == 'D4':
+            print(f'vc rolou {d4}')
+        elif dado == 'SAIR':
+            print('Espero que tenha se divertido,tenha um bom dia!!!')
+            break
+        else:
+            print('Eita,algo deu errado,tente de novo!')
     except(TypeError, ValueError, KeyboardInterrupt):
-        print('Opa parece que algo deu errado, tente de novo,acho que agora vai dar certo')
+        print('Opa,parece que algo deu errado,tenta de novo,acho que agora vai dar certo')    
+        
